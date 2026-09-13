@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0,
+                   maximum-scale=1.0, user-scalable=no">
+
+    <meta name="theme-color" content="#f8f4ed">
+
+    <title>إبراهيم ملاك</title>
+
+
+    <!-- Arabic Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+
+        body {
+            background: #f8f4ed;
+            color: #4b4035;
+            font-family: "Cairo", sans-serif;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================================
+           INTRO SCREEN
+        ========================================= */
+
+        #introScreen {
+
+            position: fixed;
+
+            inset: 0;
+
+            width: 100%;
+
+            height: 100dvh;
+
+            z-index: 9999;
+
+            background-image:
+                url("intro.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: flex-end;
+
+            cursor: pointer;
+
+            transition:
+                opacity 1s ease,
+                visibility 1s ease;
+        }
+
+
+        #introScreen.hide {
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+        }
+
+
+        .intro-text {
+
+            position: absolute;
+
+            bottom: 11%;
+
+            width: 100%;
+
+            text-align: center;
+
+            color: #a77b28;
+
+            font-family: "Amiri", serif;
+
+            font-size: 25px;
+
+            letter-spacing: 1px;
+
+            text-shadow:
+                0 1px 8px
+                rgba(255,255,255,0.8);
+        }
+
+
+        /* =========================================
+           INVITATION
+        ========================================= */
+
+        #invitation {
+
+            position: relative;
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(255,255,255,0.05),
+                    rgba(255,255,255,0.05)
+                ),
+
+                url("background.jpg");
+
+            background-size: cover;
+
+            background-position: center top;
+
+            background-repeat: no-repeat;
+
+            background-attachment: fixed;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                opacity 1.2s ease;
+        }
+
+
+        #invitation.show {
+
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+
+        .page {
+
+            width: 100%;
+
+            max-width: 650px;
+
+            margin: auto;
+
+            padding:
+                45px
+                20px
+                70px;
+        }
+
+
+        /* =========================================
+           MUSIC BUTTON
+        ========================================= */
+
+        .music-button {
+
+            position: fixed;
+
+            top: 20px;
+
+            left: 20px;
+
+            width: 48px;
+
+            height: 48px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.30);
+
+            backdrop-filter:
+                blur(8px);
+
+            -webkit-backdrop-filter:
+                blur(8px);
+
+            border:
+                1px solid
+                rgba(177,140,65,0.20);
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            z-index: 100;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0,0,0,0.04);
+        }
+
+
+        .music-button span {
+
+            font-size: 20px;
+
+            color: #a77b28;
+        }
+
+
+        /* =========================================
+           GLASS CARD
+           شفافية عالية جداً
+        ========================================= */
+
+        .glass {
+
+            background:
+                rgba(255,255,255,0.12);
+
+            backdrop-filter:
+                blur(5px);
+
+            -webkit-backdrop-filter:
+                blur(5px);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.22);
+
+            box-shadow:
+                0 10px 35px
+                rgba(90,70,40,0.025);
+
+            border-radius: 24px;
+
+            padding:
+                32px 22px;
+
+            margin-bottom: 28px;
+        }
+
+
+        /* =========================================
+           MAIN INTRO
+        ========================================= */
+
+        .main-intro {
+
+            text-align: center;
+        }
+
+
+        .bismillah {
+
+            font-family: "Amiri", serif;
+
+            font-size: 28px;
+
+            color: #a77b28;
+
+            margin-bottom: 22px;
+        }
+
+
+        .quran {
+
+            font-family: "Amiri", serif;
+
+            font-size: 23px;
+
+            line-height: 2;
+
+            color: #665746;
+
+            margin-bottom: 25px;
+        }
+
+
+        .section-title {
+
+            font-family: "Amiri", serif;
+
+            font-size: 30px;
+
+            color: #a77b28;
+
+            margin-bottom: 14px;
+        }
+
+
+        .names {
+
+            font-family: "Amiri", serif;
+
+            font-size: 46px;
+
+            color: #9b7027;
+
+            margin:
+                10px
+                0
+                20px;
+
+            direction: rtl;
+        }
+
+
+        .description {
+
+            font-family: "Amiri", serif;
+
+            font-size: 21px;
+
+            line-height: 2;
+
+            color: #625548;
+        }
+
+
+        /* =========================================
+           DATE
+        ========================================= */
+
+        .date {
+
+            font-family: "Amiri", serif;
+
+            font-size: 34px;
+
+            color: #9b7027;
+
+            margin:
+                12px
+                0;
+        }
+
+
+        .time {
+
+            font-size: 19px;
+
+            color: #665746;
+        }
+
+
+        /* =========================================
+           COUNTDOWN
+        ========================================= */
+
+        .countdown {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 10px;
+
+            direction: ltr;
+
+            margin-top: 25px;
+
+            flex-wrap: nowrap;
+        }
+
+
+        .count-box {
+
+            width: 68px;
+
+            height: 68px;
+
+            border-radius: 50%;
+
+            border:
+                1.5px solid
+                #a77b28;
+
+            background:
+                rgba(255,255,255,0.14);
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            box-shadow:
+                0 5px 15px
+                rgba(150,110,35,0.025);
+        }
+
+
+        .count-number {
+
+            font-family: "Cairo", sans-serif;
+
+            font-size: 19px;
+
+            font-weight: 500;
+
+            color: #6d521f;
+
+            line-height: 1.1;
+        }
+
+
+        .count-label {
+
+            font-family: "Amiri", serif;
+
+            font-size: 13px;
+
+            color: #8d7450;
+
+            margin-top: 3px;
+        }
+
+
+        /* =========================================
+           PROGRAM
+        ========================================= */
+
+        .program {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+
+            margin-top: 20px;
+        }
+
+
+        .program-item {
+
+            background:
+                rgba(255,255,255,0.10);
+
+            border-radius: 18px;
+
+            padding: 16px;
+
+            border:
+                1px solid
+                rgba(170,135,65,0.10);
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            text-align: right;
+
+            backdrop-filter:
+                blur(4px);
+
+            -webkit-backdrop-filter:
+                blur(4px);
+        }
+
+
+        .program-icon {
+
+            width: 50px;
+
+            height: 50px;
+
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.14);
+
+            border:
+                1px solid
+                rgba(167,123,40,0.18);
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        .program-icon svg {
+
+            width: 25px;
+
+            height: 25px;
+
+            stroke: #a77b28;
+
+            fill: none;
+
+            stroke-width: 1.7;
+
+            stroke-linecap: round;
+
+            stroke-linejoin: round;
+        }
+
+
+        .program-content {
+
+            flex: 1;
+        }
+
+
+        .program-time {
+
+            font-family: "Amiri", serif;
+
+            font-size: 24px;
+
+            color: #a77b28;
+
+            margin-bottom: 4px;
+        }
+
+
+        .program-text {
+
+            font-size: 16px;
+
+            color: #65584c;
+        }
+
+
+        /* =========================================
+           HALL IMAGE
+        ========================================= */
+
+        .hall-image {
+
+            width: 100%;
+
+            display: block;
+
+            border-radius: 22px;
+
+            margin:
+                20px
+                0;
+
+            box-shadow:
+                0 12px 35px
+                rgba(0,0,0,0.12);
+        }
+
+
+        .location-name {
+
+            font-family: "Amiri", serif;
+
+            font-size: 28px;
+
+            color: #9b7027;
+
+            margin:
+                10px
+                0;
+        }
+
+
+        .map-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            padding:
+                13px
+                28px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(173,131,50,0.88);
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            margin-top: 10px;
+
+            box-shadow:
+                0 7px 20px
+                rgba(150,110,35,0.12);
+        }
+
+
+        .map-button svg {
+
+            width: 19px;
+
+            height: 19px;
+
+            stroke: white;
+
+            fill: none;
+
+            stroke-width: 1.8;
+
+            stroke-linecap: round;
+
+            stroke-linejoin: round;
+        }
+
+
+        /* =========================================
+           NO PHOTOS
+        ========================================= */
+
+        .no-photo-icon {
+
+            width: 65px;
+
+            height: 65px;
+
+            margin:
+                0
+                auto
+                18px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(167,123,40,0.22);
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            color: #a77b28;
+
+            background:
+                rgba(255,255,255,0.10);
+        }
+
+
+        .no-photo-icon svg {
+
+            width: 30px;
+
+            height: 30px;
+
+            stroke: #a77b28;
+
+            fill: none;
+
+            stroke-width: 1.6;
+
+            stroke-linecap: round;
+
+            stroke-linejoin: round;
+        }
+
+
+        .warning {
+
+            font-family: "Amiri", serif;
+
+            font-size: 24px;
+
+            color: #9b7027;
+
+            margin-bottom: 12px;
+        }
+
+
+        .warning-text {
+
+            font-family: "Amiri", serif;
+
+            font-size: 19px;
+
+            line-height: 2;
+
+            color: #625548;
+        }
+
+
+        .important {
+
+            font-weight: bold;
+
+            color: #8c5f19;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .footer {
+
+            text-align: center;
+
+            padding:
+                20px
+                10px
+                50px;
+        }
+
+
+        .footer-text {
+
+            font-family: "Amiri", serif;
+
+            font-size: 23px;
+
+            line-height: 2;
+
+            color: #695b4e;
+        }
+
+
+        .footer-names {
+
+            font-family: "Amiri", serif;
+
+            font-size: 34px;
+
+            color: #a77b28;
+
+            direction: rtl;
+
+            margin-top: 15px;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            .page {
+
+                padding:
+                    35px
+                    15px
+                    60px;
+            }
+
+
+            .names {
+
+                font-size: 40px;
+            }
+
+
+            .section-title {
+
+                font-size: 28px;
+            }
+
+
+            .quran {
+
+                font-size: 21px;
+            }
+
+
+            .description {
+
+                font-size: 20px;
+            }
+
+
+            .date {
+
+                font-size: 31px;
+            }
+
+
+            .countdown {
+
+                gap: 7px;
+            }
+
+
+            .count-box {
+
+                width: 62px;
+
+                height: 62px;
+            }
+
+
+            .count-number {
+
+                font-size: 17px;
+            }
+
+
+            .count-label {
+
+                font-size: 12px;
+            }
+
+
+            #invitation {
+
+                background-attachment:
+                    scroll;
+            }
+
+        }
+
+
+        @media (max-width: 380px) {
+
+            .countdown {
+
+                gap: 5px;
+            }
+
+
+            .count-box {
+
+                width: 57px;
+
+                height: 57px;
+            }
+
+
+            .count-number {
+
+                font-size: 16px;
+            }
+
+
+            .count-label {
+
+                font-size: 11px;
+            }
+
+
+            .names {
+
+                font-size: 36px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         INTRO SCREEN
+    ========================================= -->
+
+    <div id="introScreen"
+         onclick="openInvitation()">
+
+        <div class="intro-text">
+
+            اضغط للفتح
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         MUSIC
+    ========================================= -->
+
+    <audio id="weddingMusic"
+           src="music.mp3"
+           loop
+           preload="auto">
+
+    </audio>
+
+
+
+    <!-- =========================================
+         INVITATION
+    ========================================= -->
+
+    <main id="invitation">
+
+
+        <!-- MUSIC BUTTON -->
+
+        <button class="music-button"
+                onclick="toggleMusic(event)"
+                aria-label="تشغيل الموسيقى">
+
+            <span id="musicIcon">
+                ♪
+            </span>
+
+        </button>
+
+
+
+        <div class="page">
+
+
+            <!-- =====================================
+                 MAIN INTRO
+            ====================================== -->
+
+            <section class="glass main-intro">
+
+
+                <div class="bismillah">
+
+                    بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيم
+
+                </div>
+
+
+                <div class="quran">
+
+                    ﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم
+                    مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+                    لِّتَسْكُنُوا إِلَيْهَا
+                    وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ﴾
+
+                </div>
+
+
+                <div class="section-title">
+
+                    عقد الميثاق الغليظ
+
+                </div>
+
+
+                <div class="names">
+
+                    إبراهيم&nbsp;&nbsp; ملاك
+
+                </div>
+
+
+                <p class="description">
+
+                    بكل حب وامتنان،
+                    يسعدنا أن نشارككم فرحتنا
+                    ونرحب بكم لمشاركتنا
+                    أجمل لحظات حياتنا.
+
+                </p>
+
+
+            </section>
+
+
+
+            <!-- =====================================
+                 DATE + COUNTDOWN
+            ====================================== -->
+
+            <section class="glass"
+                     style="text-align:center;">
+
+
+                <div class="section-title">
+
+                    موعد فرحتنا
+
+                </div>
+
+
+                <div class="date">
+
+                    26 ديسمبر 2026
+
+                </div>
+
+
+                <div class="time">
+
+                    ابتداءً من الساعة 16:00
+
+                </div>
+
+
+
+                <div class="countdown">
+
+
+                    <div class="count-box">
+
+                        <div class="count-number"
+                             id="days">
+
+                            00
+
+                        </div>
+
+                        <div class="count-label">
+
+                            يوم
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="count-box">
+
+                        <div class="count-number"
+                             id="hours">
+
+                            00
+
+                        </div>
+
+                        <div class="count-label">
+
+                            ساعة
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="count-box">
+
+                        <div class="count-number"
+                             id="minutes">
+
+                            00
+
+                        </div>
+
+                        <div class="count-label">
+
+                            دقيقة
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="count-box">
+
+                        <div class="count-number"
+                             id="seconds">
+
+                            00
+
+                        </div>
+
+                        <div class="count-label">
+
+                            ثانية
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =====================================
+                 PROGRAM
+            ====================================== -->
+
+            <section class="glass"
+                     style="text-align:center;">
+
+
+                <div class="section-title">
+
+                    تفاصيل المناسبة
+
+                </div>
+
+
+
+                <div class="program">
+
+
+                    <!-- استقبال -->
+
+                    <div class="program-item">
+
+
+                        <div class="program-icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path d="M3 11h18"></path>
+
+                                <path d="M5 11V8
+                                         a2 2 0 0 1 2-2
+                                         h10
+                                         a2 2 0 0 1 2 2
+                                         v3"></path>
+
+                                <path d="M4 17v-6"></path>
+
+                                <path d="M20 17v-6"></path>
+
+                                <path d="M6 17h12"></path>
+
+                            </svg>
+
+                        </div>
+
+
+                        <div class="program-content">
+
+
+                            <div class="program-time">
+
+                                16:00
+
+                            </div>
+
+
+                            <div class="program-text">
+
+                                استقبال الأهل والأحبة
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- عقد القران -->
+
+                    <div class="program-item">
+
+
+                        <div class="program-icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path d="M6 3h12"></path>
+
+                                <path d="M7 3v4
+                                         c0 3 2 5 5 6
+                                         c3-1 5-3 5-6V3"></path>
+
+                                <path d="M12 13v8"></path>
+
+                                <path d="M8 21h8"></path>
+
+                            </svg>
+
+                        </div>
+
+
+                        <div class="program-content">
+
+
+                            <div class="program-time">
+
+                                عقد القران
+
+                            </div>
+
+
+                            <div class="program-text">
+
+                                عقد القران الشرعي (الفاتحة)
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- قهوة -->
+
+                    <div class="program-item">
+
+
+                        <div class="program-icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path d="M4 8h13v7
+                                         a4 4 0 0 1-4 4H8
+                                         a4 4 0 0 1-4-4Z"></path>
+
+                                <path d="M17 10h2
+                                         a2 2 0 0 1 0 4h-2"></path>
+
+                                <path d="M7 4
+                                         c0 1 1 1 1 2"></path>
+
+                                <path d="M11 4
+                                         c0 1 1 1 1 2"></path>
+
+                            </svg>
+
+                        </div>
+
+
+                        <div class="program-content">
+
+
+                            <div class="program-time">
+
+                                قهوة
+
+                            </div>
+
+
+                            <div class="program-text">
+
+                                قهوة ولمة طيبة
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- عشاء -->
+
+                    <div class="program-item">
+
+
+                        <div class="program-icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path d="M5 3v8"></path>
+
+                                <path d="M8 3v8"></path>
+
+                                <path d="M5 7h3"></path>
+
+                                <path d="M7 11v10"></path>
+
+                                <path d="M17 3v18"></path>
+
+                                <path d="M17 3
+                                         c-3 3-3 6 0 8"></path>
+
+                            </svg>
+
+                        </div>
+
+
+                        <div class="program-content">
+
+
+                            <div class="program-time">
+
+                                عشاء
+
+                            </div>
+
+
+                            <div class="program-text">
+
+                                عشاء احتفالي بإذن الله
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =====================================
+                 HALL
+            ====================================== -->
+
+            <section class="glass"
+                     style="text-align:center;">
+
+
+                <div class="section-title">
+
+                    مكان فرحتنا
+
+                </div>
+
+
+                <img src="hall.jpg"
+                     class="hall-image"
+                     alt="Salle des fêtes Dream House">
+
+
+                <div class="location-name">
+
+                    Salle des fêtes Dream House
+
+                </div>
+
+
+                <a class="map-button"
+                   href="https://maps.app.goo.gl/BiDmcANPPLYT9i1i8"
+                   target="_blank"
+                   rel="noopener">
+
+
+                    <svg viewBox="0 0 24 24">
+
+                        <path d="M12 21s7-6.2 7-12
+                                 a7 7 0 1 0-14 0
+                                 c0 5.8 7 12 7 12Z"></path>
+
+                        <circle cx="12"
+                                cy="9"
+                                r="2.3"></circle>
+
+                    </svg>
+
+
+                    فتح الموقع
+
+
+                </a>
+
+
+            </section>
+
+
+
+            <!-- =====================================
+                 NO PHOTOS
+            ====================================== -->
+
+            <section class="glass"
+                     style="text-align:center;">
+
+
+                <div class="no-photo-icon">
+
+
+                    <svg viewBox="0 0 24 24">
+
+                        <path d="M4 7
+                                 h4l1.5-2h5L16 7h4
+                                 a1 1 0 0 1 1 1v10
+                                 a1 1 0 0 1-1 1H4
+                                 a1 1 0 0 1-1-1V8
+                                 a1 1 0 0 1 1-1Z"></path>
+
+                        <circle cx="12"
+                                cy="13"
+                                r="3"></circle>
+
+                        <path d="M4 4
+                                 L20 20"></path>
+
+                    </svg>
+
+
+                </div>
+
+
+
+                <div class="warning">
+
+                    حفاظًا على خصوصية فرحتنا
+
+                </div>
+
+
+
+                <p class="warning-text">
+
+
+                    نرجو من ضيوفنا الكرام
+
+
+                    <span class="important">
+
+                        الامتناع التام عن التصوير والتسجيل
+
+                    </span>
+
+
+                    خلال المناسبة،
+
+
+                    وذلك حرصًا على خصوصية العروسين
+                    وتجنبًا لأي إحراج.
+
+
+                    <br><br>
+
+
+                    نقدّر تفهّمكم والتزامكم،
+                    ونسعد بحضوركم ومشاركتكم
+                    هذه الذكرى الجميلة.
+
+
+                </p>
+
+
+            </section>
+
+
+
+            <!-- =====================================
+                 FOOTER
+            ====================================== -->
+
+            <div class="footer">
+
+
+                <div class="footer-text">
+
+                    وجودكم بيننا
+                    هو أجمل ما يكمّل فرحتنا 🤍
+
+                    <br>
+
+                    ننتظركم بكل حب
+
+                </div>
+
+
+                <div class="footer-names">
+
+                    إبراهيم&nbsp;&nbsp; ملاك
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================= -->
+
+    <script>
+
+
+        const introScreen =
+            document.getElementById("introScreen");
+
+
+        const invitation =
+            document.getElementById("invitation");
+
+
+        const music =
+            document.getElementById("weddingMusic");
+
+
+        const musicIcon =
+            document.getElementById("musicIcon");
+
+
+
+        /* =========================================
+           OPEN INVITATION
+        ========================================= */
+
+        function openInvitation() {
+
+
+            introScreen.classList.add("hide");
+
+
+            setTimeout(function() {
+
+                invitation.classList.add("show");
+
+            }, 300);
+
+
+
+            music.play()
+
+                .then(function() {
+
+                    musicIcon.textContent = "♫";
+
+                })
+
+                .catch(function(error) {
+
+                    console.log(
+                        "Music could not autoplay:",
+                        error
+                    );
+
+                });
+
+        }
+
+
+
+        /* =========================================
+           MUSIC CONTROL
+        ========================================= */
+
+        function toggleMusic(event) {
+
+
+            event.stopPropagation();
+
+
+            if (music.paused) {
+
+
+                music.play()
+
+                    .then(function() {
+
+                        musicIcon.textContent = "♫";
+
+                    })
+
+                    .catch(function(error) {
+
+                        console.log(error);
+
+                    });
+
+
+            } else {
+
+
+                music.pause();
+
+
+                musicIcon.textContent = "♪";
+
+
+            }
+
+        }
+
+
+
+        /* =========================================
+           COUNTDOWN
+        ========================================= */
+
+        const weddingDate =
+
+            new Date(
+                "2026-12-26T16:00:00"
+            ).getTime();
+
+
+
+        function updateCountdown() {
+
+
+            const now =
+                new Date().getTime();
+
+
+            const distance =
+                weddingDate - now;
+
+
+
+            if (distance <= 0) {
+
+
+                document.getElementById("days")
+                    .textContent = "00";
+
+
+                document.getElementById("hours")
+                    .textContent = "00";
+
+
+                document.getElementById("minutes")
+                    .textContent = "00";
+
+
+                document.getElementById("seconds")
+                    .textContent = "00";
+
+
+                return;
+
+            }
+
+
+
+            const days =
+
+                Math.floor(
+
+                    distance /
+                    (1000 * 60 * 60 * 24)
+
+                );
+
+
+
+            const hours =
+
+                Math.floor(
+
+                    (distance %
+                    (1000 * 60 * 60 * 24))
+                    /
+                    (1000 * 60 * 60)
+
+                );
+
+
+
+            const minutes =
+
+                Math.floor(
+
+                    (distance %
+                    (1000 * 60 * 60))
+                    /
+                    (1000 * 60)
+
+                );
+
+
+
+            const seconds =
+
+                Math.floor(
+
+                    (distance %
+                    (1000 * 60))
+                    /
+                    1000
+
+                );
+
+
+
+            document.getElementById("days")
+                .textContent =
+
+                String(days)
+                    .padStart(2, "0");
+
+
+            document.getElementById("hours")
+                .textContent =
+
+                String(hours)
+                    .padStart(2, "0");
+
+
+            document.getElementById("minutes")
+                .textContent =
+
+                String(minutes)
+                    .padStart(2, "0");
+
+
+            document.getElementById("seconds")
+                .textContent =
+
+                String(seconds)
+                    .padStart(2, "0");
+
+        }
+
+
+
+        updateCountdown();
+
+
+        setInterval(
+            updateCountdown,
+            1000
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
