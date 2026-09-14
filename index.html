@@ -326,6 +326,25 @@
         }
 
 
+        .family-invite {
+
+            font-family: "Amiri", serif;
+
+            font-size: 19px;
+
+            line-height: 2;
+
+            color: #625548;
+
+            margin:
+                -8px
+                0
+                22px;
+
+            text-align: center;
+        }
+
+
         .names {
 
             font-family: "Amiri", serif;
@@ -663,6 +682,54 @@
            NO PHOTOS
         ========================================= */
 
+        .children-icon {
+
+            width: 65px;
+
+            height: 65px;
+
+            margin:
+                0
+                auto
+                18px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(167,123,40,0.22);
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            color: #a77b28;
+
+            background:
+                rgba(255,255,255,0.10);
+        }
+
+
+        .children-icon svg {
+
+            width: 32px;
+
+            height: 32px;
+
+            stroke: #a77b28;
+
+            fill: none;
+
+            stroke-width: 1.6;
+
+            stroke-linecap: round;
+
+            stroke-linejoin: round;
+        }
+
+
         .no-photo-icon {
 
             width: 65px;
@@ -814,6 +881,13 @@
             .quran {
 
                 font-size: 21px;
+            }
+
+
+            .family-invite {
+
+                font-size: 18px;
+
             }
 
 
@@ -984,10 +1058,15 @@
 
                 </div>
 
+                <div class="family-invite">
+                    يسر عائلة أونيس وبالي أن تشاركوهم فرحتهم
+                    في فرحة ابنهم وابنتهم
+                </div>
+
 
                 <div class="section-title">
 
-                    عقد الميثاق الغليظ
+                    حفل زواج
 
                 </div>
 
@@ -1208,15 +1287,19 @@
 
                             <svg viewBox="0 0 24 24">
 
-                                <path d="M6 3h12"></path>
+                                <path d="M4 5.5
+                                         c2.5-1.2 5.2-1.2 8 0
+                                         v14
+                                         c-2.8-1.2-5.5-1.2-8 0
+                                         Z"></path>
 
-                                <path d="M7 3v4
-                                         c0 3 2 5 5 6
-                                         c3-1 5-3 5-6V3"></path>
+                                <path d="M20 5.5
+                                         c-2.5-1.2-5.2-1.2-8 0
+                                         v14
+                                         c2.8-1.2 5.5-1.2 8 0
+                                         Z"></path>
 
-                                <path d="M12 13v8"></path>
-
-                                <path d="M8 21h8"></path>
+                                <path d="M12 5.5v14"></path>
 
                             </svg>
 
@@ -1412,6 +1495,50 @@
 
 
             <!-- =====================================
+                 CHILDREN CARE
+            ====================================== -->
+
+            <section class="glass"
+                     style="text-align:center;">
+
+                <div class="children-icon">
+
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="9" cy="8" r="3"></circle>
+                        <circle cx="16.5" cy="9" r="2.3"></circle>
+                        <path d="M3.5 19
+                                 c0-3 2.3-5 5.5-5
+                                 s5.5 2 5.5 5"></path>
+                        <path d="M14 15
+                                 c1-.8 2-1.2 3.2-1.2
+                                 c2 0 3.3 1.2 3.3 3.2"></path>
+                    </svg>
+
+                </div>
+
+                <div class="warning">
+                    فقرة خاصة بالأطفال
+                </div>
+
+                <p class="warning-text">
+                    حرصًا على راحة أطفالنا وسلامتهم،
+                    ستكون هناك فقرة خاصة للأطفال تحت إشراف
+                    <span class="important">
+                        مربية أطفال مختصة
+                    </span>
+                    تتكفل باللعب معهم وتقديم الطعام لهم،
+                    وذلك لتفادي الفوضى داخل القاعة
+                    وحفاظًا على سلامتهم،
+                    خصوصًا من خطر السقوط من الدرج.
+                    <br><br>
+                    نرجو من أولياء الأمور التعاون معنا
+                    لضمان أجواء آمنة ومريحة للجميع.
+                </p>
+
+            </section>
+
+
+            <!-- =====================================
                  NO PHOTOS
             ====================================== -->
 
@@ -1456,29 +1583,36 @@
                 <p class="warning-text">
 
 
-                    نرجو من ضيوفنا الكرام
-
-
-                    <span class="important">
-
-                        الامتناع التام عن التصوير والتسجيل
-
-                    </span>
-
-
-                    خلال المناسبة،
-
-
-                    وذلك حرصًا على خصوصية العروسين
-                    وتجنبًا لأي إحراج.
+                    نرجو من جميع ضيوفنا الكرام الالتزام الصارم
+                    بعدم التصوير أو التسجيل بأي وسيلة كانت،
+                    بما في ذلك الهواتف والأجهزة الشخصية.
 
 
                     <br><br>
 
 
-                    نقدّر تفهّمكم والتزامكم،
-                    ونسعد بحضوركم ومشاركتكم
-                    هذه الذكرى الجميلة.
+                    <span class="important">
+
+                        يُمنع منعًا باتًا تصوير العروسين
+                        أو الضيوف أو نشر أي صورة أو فيديو
+                        من داخل القاعة أو مشاركته على مواقع التواصل.
+
+                    </span>
+
+
+                    <br><br>
+
+
+                    هذا التنبيه إلزامي وليس اختياريًا،
+                    وهو حفاظًا على خصوصية العروسين والضيوف
+                    واحترامًا لرغبتهم.
+
+
+                    <br><br>
+
+
+                    نرجو عدم تصوير أي شخص دون إذنه،
+                    ونقدّر التزامكم الكامل بهذا الأمر.
 
 
                 </p>
